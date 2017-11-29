@@ -25,20 +25,23 @@
   <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
+    <ol class="carousel-indicators" >
+       <ng-container *ngFor="let im of getMenu(1); let i = index">
+      <li *ngIf= "i==0" data-target="#myCarousel" data-slide-to="{i}" class="active"></li>
+      <li *ngIf= "i>0" data-target="#myCarousel" data-slide-to="{i}"></li>
+      </ng-container>
     </ol>
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner" *ngFor="let im of getMenu(1); let i = index">
-      <div  *ngIf= "i==0" class="item active" style="height: 28em;width: 49em;" >
+    <div class="carousel-inner" >
+      <ng-container *ngFor="let im of getMenu(1); let i = index">
+      <div   *ngIf="i==0" class="item active" style="height: 28em;width: 49em;" >
         <img  src="{{im}}"  style="width:100%;">
       </div>
-      <div  *ngIf= "!i==0" class="item " style="height: 28em;width: 49em;" >
+      <div   *ngIf="i!=0" class="item" style="height: 28em;width: 49em;" >
         <img  src="{{im}}"  style="width:100%;">
       </div>
+      </ng-container>
 
     </div>
 
@@ -96,18 +99,23 @@
 <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
+  <ol class="carousel-indicators" >
+     <ng-container *ngFor="let im of getMenu(2); let i = index">
+    <li *ngIf= "i==0" data-target="#myCarousel" data-slide-to="{i}" class="active"></li>
+    <li *ngIf= "i>0" data-target="#myCarousel" data-slide-to="{i}"></li>
+    </ng-container>
   </ol>
 
   <!-- Wrapper for slides -->
-  <div class="carousel-inner" *ngFor="let im of getMenu(2)">
-    <div class="item active" style="height: 28em;width: 49em;" >
+  <div class="carousel-inner" >
+    <ng-container *ngFor="let im of getMenu(2); let i = index">
+    <div   *ngIf="i==0" class="item active" style="height: 28em;width: 49em;" >
       <img  src="{{im}}"  style="width:100%;">
     </div>
-
+    <div   *ngIf="i!=0" class="item" style="height: 28em;width: 49em;" >
+      <img  src="{{im}}"  style="width:100%;">
+    </div>
+    </ng-container>
 
   </div>
 

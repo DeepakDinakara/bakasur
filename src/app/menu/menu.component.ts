@@ -12,7 +12,12 @@ export class MenuComponent {
    likes= {'1_1':0,'2_1':0,'3_1':0,'4_1':0,'5_1':0,'1_2':0,'2_2':0,'3_2':0,'4_2':0,'5_2':0};
    dislikes={'1_1':0,'2_1':0,'3_1':0,'4_1':0,'5_1':0,'1_2':0,'2_2':0,'3_2':0,'4_2':0,'5_2':0};
 
-   menus={'1_1':['https://i.pinimg.com/736x/ae/43/7d/ae437d197c3185fdc87b6b49c2042692--desi-wedding-indian-wedding-food.jpg','https://assets.londonist.com/uploads/2016/05/i875/jashan_vegetarian_thali_1.jpg'],
+   menus={'1_1':['http://www.fnstatic.co.uk/images/content/package/101-amazing-indian-recipes.jpeg',
+'http://images.indianexpress.com/2017/11/khichdi_759.jpg',
+'http://www.chingssecret.com/images/family_banner_1200_370.jpg',
+'https://content1.jdmagicbox.com/comp/bangalore/q7/080pxx80.xx80.160304101252.d4q7/catalogue/indian-food-court-electronic-city-bangalore-home-delivery-restaurants-z117kl.jpg',
+'https://media-cdn.tripadvisor.com/media/photo-s/0e/c6/38/1c/curry-magic-indian-food.jpg',
+'https://riceandcurry.files.wordpress.com/2012/02/dscn2554.jpg'],
 '2_1':['https://assets.londonist.com/uploads/2016/05/i875/jashan_vegetarian_thali_1.jpg'],
 '3_1':['http://del.h-cdn.co/assets/17/19/1494616646-maryland-.jpg'],
 '4_1':['https://pauperswithouttravel.files.wordpress.com/2012/07/rajdhani3.jpeg'],
