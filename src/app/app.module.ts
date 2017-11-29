@@ -3,6 +3,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { CdkTableModule } from '@angular/cdk/table'
 import { OverlayModule } from '@angular/cdk/overlay';
+import { RouterModule, Routes } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -35,6 +37,10 @@ import {
   MatPaginatorModule
 } from '@angular/material';
 import { AppComponent } from './app.component';
+import { MenuComponent } from './menu/menu.component';
+import { RosterComponent } from './roster/roster.component';
+import { UserDataComponent } from './user-data/user-data.component';
+import { OverallDataComponent } from './overall-data/overall-data.component';
 
 @NgModule({
   exports: [
@@ -77,16 +83,15 @@ import { AppComponent } from './app.component';
 })
 export class MaterialModule { }
 
-
-
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, MenuComponent, RosterComponent, UserDataComponent, OverallDataComponent
   ],
   imports: [
     BrowserModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
