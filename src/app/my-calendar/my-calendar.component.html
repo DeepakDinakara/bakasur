@@ -20,8 +20,9 @@
 
   <div class="cal-month-box">
     <div class="cal-row-fluid cal-before-eventlist" *ngFor="let weekData of calendarData.weeks">
-      <div class="cal-cell1 cal-cell" data-cal-row="-day1" *ngFor="let daysData of weekData.days; let dayIndex = index">
-        <div class="cal-month-day cal-day-outmonth" [ngClass]="{'cal-day-weekend': dayIndex === 0 || dayIndex === 6, 'cal-day-disabled': daysData.isDisabled}">
+      <div class="cal-cell1 cal-cell" data-cal-row="-day1" *ngFor="let daysData of weekData.days; let dayIndex = index" [ngClass]="{'rostered': daysData.isRostered}">
+        <div class="cal-month-day" [ngClass]="{'cal-day-weekend': dayIndex === 0 || dayIndex === 6, 'cal-day-outmonth': !daysData.isCurrentMonth, 'rostered': daysData.isRostered}"
+          (click)="onRoster($event, daysData)">
           <span class="pull-right" [attr.data-cal-date]="daysData.day" [attr.data-cal-view]="daysData.day" data-toggle="tooltip" title=""
             data-original-title="">{{daysData.day}}</span>
         </div>

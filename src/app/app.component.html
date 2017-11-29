@@ -1,7 +1,16 @@
-<nav>
-  <a routerLink="/menu">Menu</a>
-  <a routerLink="/roster">Roster</a>
-  <a routerLink="/user-data">User Data</a>
-  <a routerLink="/overall-data">Overall Data</a>
+<!-- <nav mat-tab-nav-bar>
+    <a mat-tab-link
+       *ngFor="let link of navLinks"
+       [routerLink]="link.path"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive">
+      {{link.label}}
+    </a>
+  </nav> -->
+<nav mat-tab-nav-bar>
+  <a mat-tab-link routerLink="/menu">Menu</a>
+  <a mat-tab-link routerLink="/roster">Roster</a>
+  <a mat-tab-link routerLink="/user-data">User Data</a>
+  <a mat-tab-link routerLink="/overall-data">Overall Data</a>
 </nav>
 <router-outlet></router-outlet>
