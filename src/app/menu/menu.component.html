@@ -1,11 +1,12 @@
+<ng-container *ngFor="let d of daysCount">
 <mat-card class="akam-menu-card">
   <mat-card-header>
     <!-- <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>01 Dec</mat-card-title>
       <mat-card-subtitle>Friday</mat-card-subtitle> -->
     <div class="date-header">
-      <span class="date">04 Dec</span>
-      <span class="day">Monday</span>
+      <span class="date">{{dayDetails[d]['date']}}</span>
+      <span class="day">{{dayDetails[d]['day']}}</span>
     </div>
     <!-- <mat-card-title>04 Dec</mat-card-title>
       <mat-card-subtitle>Monday</mat-card-subtitle> -->
@@ -15,28 +16,28 @@
   <mat-tab-group (selectChange)="changeMenu($event)">
     <mat-tab label="Menu 1">
       <div>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div id="myCarousel{{d}}" data-interval="false" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <ng-container *ngFor="let im of getMenu(d,1); let i = index;">
+              <li *ngIf="i==0" data-target="#myCarousel" data-slide-to="{i}" class="active"></li>
+              <li *ngIf="i!=0" data-target="#myCarousel" data-slide-to="{i}" ></li>
+            </ng-container>
           </ol>
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
-            <div class="item active">
-              <img src="https://www.archanaskitchen.com//images/archanaskitchen/World_Asian/Vegetable_Manchow_Soup.jpg" alt="Manchow Soup"
+            <ng-container *ngFor="let im of getMenu(d,1); let i = index">
+
+            <div *ngIf="i==0" class="item active">
+              <img src="{{im}}"
                 style="width:100%;">
             </div>
 
-            <div class="item">
-              <img src="http://4.bp.blogspot.com/-7v_YoWlnwZs/VlRHJrVQ4qI/AAAAAAAD5fo/7VSM-Xhc3Vs/s1600/1.JPG" alt="Veg Manchurian" style="width:100%;">
+            <div *ngIf="i!=0" class="item">
+              <img src="{{im}}"  style="width:100%;">
             </div>
-
-            <div class="item">
-              <img src="http://www.taj-indiancuisine.com/wp-content/uploads/2014/07/Dal-Soup.jpg" alt="Dal Tadka" style="width:100%;">
-            </div>
+            </ng-container>
           </div>
 
           <!-- Left and right controls -->
@@ -64,15 +65,15 @@
                 </button>
                 <button mat-button>REGISTER</button> -->
           <span class="action-item-span">
-            <span>134</span>
-            <button mat-icon-button color="warn">
+            <span>{{getLikes(d,1)}}</span>
+            <button mat-icon-button (click)="like(d,1)" color="warn">
               <mat-icon aria-label="favorite button">favorite</mat-icon>
             </button>
           </span>
 
           <span class="action-item-span">
-            <span>134</span>
-            <button mat-icon-button color="warn">
+            <span>{{getDisLikes(d,1)}}</span>
+            <button mat-icon-button (click)="disLike(d,1)" color="warn">
               <mat-icon aria-label="dislike button">thumb_down</mat-icon>
             </button>
           </span>
@@ -94,25 +95,25 @@
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <ng-container *ngFor="let im of getMenu(d,2); let i = index">
+              <li *ngIf="i==0" data-target="#myCarousel" data-slide-to="{i}" class="active"></li>
+              <li *ngIf="i!=0" data-target="#myCarousel" data-slide-to="{i}" ></li>
+            </ng-container>
           </ol>
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
-            <div class="item active">
-              <img src="https://www.archanaskitchen.com//images/archanaskitchen/World_Asian/Vegetable_Manchow_Soup.jpg" alt="Manchow Soup"
+            <ng-container *ngFor="let im of getMenu(d,2); let i = index">
+
+            <div *ngIf="i==0" class="item active">
+              <img src="{{im}}"
                 style="width:100%;">
             </div>
 
-            <div class="item">
-              <img src="http://4.bp.blogspot.com/-7v_YoWlnwZs/VlRHJrVQ4qI/AAAAAAAD5fo/7VSM-Xhc3Vs/s1600/1.JPG" alt="Veg Manchurian" style="width:100%;">
+            <div *ngIf="i!=0" class="item">
+              <img src="{{im}}"  style="width:100%;">
             </div>
-
-            <div class="item">
-              <img src="http://www.taj-indiancuisine.com/wp-content/uploads/2014/07/Dal-Soup.jpg" alt="Dal Tadka" style="width:100%;">
-            </div>
+            </ng-container>
           </div>
 
           <!-- Left and right controls -->
@@ -140,15 +141,15 @@
                     </button>
                     <button mat-button>REGISTER</button> -->
           <span class="action-item-span">
-            <span>134</span>
-            <button mat-icon-button color="warn">
+            <span>{{getLikes(d,2)}}</span>
+            <button mat-icon-button (click)="like(d,2)" color="warn">
               <mat-icon aria-label="favorite button">favorite</mat-icon>
             </button>
           </span>
 
           <span class="action-item-span">
-            <span>134</span>
-            <button mat-icon-button color="warn">
+            <span>{{getDisLikes(d,2)}}</span>
+            <button mat-icon-button (click)="disLike(d,2)" color="warn">
               <mat-icon aria-label="dislike button">thumb_down</mat-icon>
             </button>
           </span>
@@ -169,3 +170,4 @@
 
 
 </mat-card>
+</ng-container>

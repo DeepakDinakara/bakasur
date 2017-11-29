@@ -4,9 +4,14 @@
     background-size: cover;
 }
 
-
+.mat-card{
+  width:25%;
+  float:left;
+}
 .akam-menu-card {
     width: 400px;
+    width: 25%;
+    height:400px;
 }
 
 .akam-menu-card.mat-card {
