@@ -10,3 +10,8 @@ nav a {
     min-width: 120px;
     opacity: 0.8;
 }
+
+
+::ng-deep .success-color.mat-snack-bar-container {
+    background: #049616 !important;
+}

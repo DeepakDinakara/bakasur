@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-roster',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RosterComponent implements OnInit {
 
-  constructor() { }
+  constructor(public snackBar: MatSnackBar) { }
 
   ngOnInit() {
+  }
+
+  onSaveRoster() {
+    this.snackBar.open('Roster Updated!', 'Success', {
+      duration: 1000,
+      panelClass: 'success-color'
+    });
   }
 
 }
