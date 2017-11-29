@@ -41,6 +41,7 @@ import { MenuComponent } from './menu/menu.component';
 import { RosterComponent } from './roster/roster.component';
 import { UserDataComponent } from './user-data/user-data.component';
 import { OverallDataComponent } from './overall-data/overall-data.component';
+import { MyCalendarComponent } from './my-calendar/my-calendar.component';
 
 @NgModule({
   exports: [
@@ -85,7 +86,7 @@ export class MaterialModule { }
 
 @NgModule({
   declarations: [
-    AppComponent, MenuComponent, RosterComponent, UserDataComponent, OverallDataComponent
+    AppComponent, MenuComponent, RosterComponent, UserDataComponent, OverallDataComponent, MyCalendarComponent
   ],
   imports: [
     BrowserModule,
