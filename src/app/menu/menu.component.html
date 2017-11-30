@@ -56,8 +56,8 @@
                   <i class="material-icons">favorite</i>
                   <i class="material-icons">thumb_up</i>
                 </p> -->
-              <p style="margin-top: 10px;">
-                Some Brief Description about the menu.
+              <p class= "menu-desc" style="margin-top: 10px;">
+                {{getDescription(d,1)}}
               </p>
             </mat-card-content>
             <mat-card-actions>
@@ -67,14 +67,15 @@
                 <button mat-button>REGISTER</button> -->
               <span class="action-item-span">
                 <span>{{getLikes(d,1)}}</span>
-                <button mat-icon-button (click)="like(d,1)" color="warn">
+                <button [disabled]="!canLike(d)"  mat-icon-button (click)="like(d,1)" color="warn">
                   <mat-icon aria-label="favorite button">favorite</mat-icon>
                 </button>
+
               </span>
 
               <span class="action-item-span">
                 <span>{{getDisLikes(d,1)}}</span>
-                <button mat-icon-button (click)="disLike(d,1)" color="warn">
+                <button [disabled]="!canLike(d)" mat-icon-button (click)="disLike(d,1)" color="warn">
                   <mat-icon aria-label="dislike button">thumb_down</mat-icon>
                 </button>
               </span>
@@ -93,12 +94,12 @@
         <mat-tab label="Menu 2">
 
           <div>
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div id="myCarousel{{d}}" class="carousel slide" data-ride="carousel">
               <!-- Indicators -->
               <ol class="carousel-indicators">
                 <ng-container *ngFor="let im of getMenu(d,2); let i = index">
-                  <li *ngIf="i==0" data-target="#myCarousel" data-slide-to="{i}" class="active"></li>
-                  <li *ngIf="i!=0" data-target="#myCarousel" data-slide-to="{i}"></li>
+                  <li *ngIf="i==0" [attr.data-target]="'#myCarousel' + d" data-slide-to="{i}" class="active"></li>
+                  <li *ngIf="i!=0" [attr.data-target]="'#myCarousel' + d" data-slide-to="{i}"></li>
                 </ng-container>
               </ol>
 
@@ -117,11 +118,11 @@
               </div>
 
               <!-- Left and right controls -->
-              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <a class="left carousel-control" [attr.href]="'#myCarousel' + d" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
                 <span class="sr-only">Previous</span>
               </a>
-              <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <a class="right carousel-control" [attr.href]="'#myCarousel' + d" data-slide="next">
                 <span class="glyphicon glyphicon-chevron-right"></span>
                 <span class="sr-only">Next</span>
               </a>
@@ -131,8 +132,8 @@
                       <i class="material-icons">favorite</i>
                       <i class="material-icons">thumb_up</i>
                     </p> -->
-              <p style="margin-top: 10px;">
-                Some Brief Description about the menu.
+              <p class= "menu-desc" style="margin-top: 10px;">
+                {{getDescription(d,2)}}
               </p>
             </mat-card-content>
             <mat-card-actions>
@@ -142,14 +143,14 @@
                     <button mat-button>REGISTER</button> -->
               <span class="action-item-span">
                 <span>{{getLikes(d,2)}}</span>
-                <button mat-icon-button (click)="like(d,2)" color="warn">
+                <button [disabled]="!canLike(d)" mat-icon-button (click)="like(d,2)" color="warn">
                   <mat-icon aria-label="favorite button">favorite</mat-icon>
                 </button>
               </span>
 
               <span class="action-item-span">
                 <span>{{getDisLikes(d,2)}}</span>
-                <button mat-icon-button (click)="disLike(d,2)" color="warn">
+                <button [disabled]="!canLike(d)" mat-icon-button (click)="disLike(d,2)" color="warn">
                   <mat-icon aria-label="dislike button">thumb_down</mat-icon>
                 </button>
               </span>

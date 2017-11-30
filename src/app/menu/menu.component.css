@@ -67,6 +67,10 @@ img.carousel-img {
     width: 370px;
     height: 210px;
 }
+p.menu-desc{
+  height: 57px;
+    overflow: scroll;
+}
 
 ::ng-deep .mat-tab-header-pagination.mat-tab-header-pagination-disabled {
     display: none !important;
