@@ -55,7 +55,9 @@ mat-card-actions .mat-icon {
     color: #ff09099e
 }
 
-
+mat-card-actions .mat-icon.disabled-icon {
+  color: gray;
+}
 mat-card-actions .action-item-span {
     margin-right: 10px;
 }
@@ -128,4 +130,3 @@ a.roster-link-btn {
     display: inline-flex;
     text-decoration: none !important;
 }
-
