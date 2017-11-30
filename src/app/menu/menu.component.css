@@ -90,10 +90,12 @@ img.carousel-img:hover {
     transition: all 800ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 
-div.menu-desc{
-  height: 25px;
-  font-size:10px;
-  text-overflow: ellipsis;
+div.menu-desc {
+    padding-top: 10px;
+    height: 30px;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    letter-spacing: 0.3px;
 }
 
 ::ng-deep .mat-tab-header-pagination.mat-tab-header-pagination-disabled {
