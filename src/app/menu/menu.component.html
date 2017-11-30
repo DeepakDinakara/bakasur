@@ -69,8 +69,10 @@
                 <button mat-button>REGISTER</button> -->
               <span class="action-item-span">
                 <span>{{getLikes(d,1)}}</span>
+
                 <button [disabled]="!canLike(d)" mat-icon-button (click)="like(d,1)" color="warn">
                   <mat-icon aria-label="favorite button">favorite</mat-icon>
+
                 </button>
 
               </span>
