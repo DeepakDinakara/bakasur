@@ -1,8 +1,9 @@
 import {Component, OnInit, AfterViewInit } from '@angular/core';
-import data from '../data/data.json';
+import dataVal from '../data/data.json';
 
 declare var jQuery:any;
 declare var Highcharts:any;
+declare var Chart:any;
 declare var Highstock:any;
 
 @Component({
@@ -28,19 +29,22 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
     	this.renderUsageTrendChart();
     	this.renderRatingsTrendChart();
         this.renderWastageTrendChart();
-    	console.log("First Day of week:" + this.getFirstDayOfWeek(this.dateToday));
-    	console.log("First Day of month:" + this.getFirstDayofMonth(this.dateToday));
-    	console.log(data);
     }
  
-    getFirstDayOfWeek(dateVal:Date) {
+    getFirstDayOfWeek() {
+        let dateVal = new Date();
     	let day = dateVal.getDay();
       	let diff = dateVal.getDate() - day + (day == 0 ? -6:1);
-  		return new Date(dateVal.setDate(diff));
+        let firstDay = new Date(dateVal.setDate(diff));
+        firstDay.setHours(0,0,0,0);
+  		return firstDay;
     }
 
-    getFirstDayofMonth(dateVal:Date) {
-    	return new Date(dateVal.getFullYear(), dateVal.getMonth(), 1);
+    getFirstDayofMonth() {
+        let dateVal = new Date();
+    	let firstDay = new Date(dateVal.getFullYear(), dateVal.getMonth(), 1);
+        firstDay.setHours(0,0,0,0);
+        return firstDay;
     }
 
     renderRatingsTrendChart(){
@@ -55,50 +59,67 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
         jQuery('#wastageTrendContainer').highcharts(this.getWastageChartConfig());
     }
 
+    getCurrentWeekDateRange() {
+        let dateRange: Date[] = new Array();
+        let weekStartDate:Date = this.getFirstDayOfWeek();
+        for(let time = weekStartDate.getTime();time<this.dateToday.getTime();time = time+86400000) {
+            dateRange.push(new Date(time));
+        }
+        return dateRange;
+    }
+
+    getDateRange() {
+        return this.getCurrentWeekDateRange();
+    }
+
     getRatingsChartConfig() {
         let chartConfig = {
+          "chart": {
+            "zoomType": "x",
+            "backgroundColor": "white"
+          },
           "title": {
             "text": "Ratings Trend"
           },
           "xAxis": {
-            "categories": [
-              "Dec 01, 2017",
-              "Dec 02, 2017",
-              "Dec 03, 2017",
-              "Dec 04, 2017",
-              "Dec 05, 2017"
-            ]
+            "type": "datetime",
+            "categories": this.getDateRange(),
+            "dateTimeLabelFormats": {
+              "hour": '%l:%M %p'
+            },
+            labels: {
+                    formatter: function() {
+                        return Highcharts.dateFormat('%d %b, %Y', this.value);
+                    }
+                }
           },
           "yAxis": {
             "title": {
-              "text": "Average Ratings"
+            "text": "Average Ratings"
             }
           },
           "legend": {
-            "layout": "vertical",
-            "align": "right",
-            "verticalAlign": "middle"
+            "align": "center",
+            "verticalAlign": "bottom"
           },
           "plotOptions": {
             "series": {
               "label": {
                 "connectorAllowed": false
               },
-              "tooltip": {
-                "enabled": false
-              }
+              "color":"yellow"
+            }
+          },
+          "tooltip": {
+            "formatter": function() {
+                return 'Average Rating: <b>' + this.point.y + '</b><br>' + '1 Star : <b>' + this.point.rating[0] + '</b>'+ '<br>2 Stars : <b>' + this.point.rating[1] + '</b>'+ '<br>3 Stars : <b>' + this.point.rating[2] + '</b>'+ '<br>4 Stars : <b>' + this.point.rating[4] + '</b>'+ '<br>5 Stars : <b>' + this.point.rating[4]+ '</b>';
             }
           },
           "series": [
             {
+              "type":"line",
               "name": "Average Ratings",
-              "data": [
-                4,
-                5,
-                6,
-                5,
-                3
-              ]
+              "data": [{"y":2.4,"rating":[10,8,8,6,5]},{"y":2.94,"rating":[8,7,7,7,7]},{"y":3.1,"rating":[5,6,7,8,6]},{"y":2.7,"rating":[8,9,5,4,6]}]
             }
           ],
           "responsive": {
@@ -124,26 +145,37 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
     getUsageChartConfig() {
         let chartConfig = {
           "chart": {
-            "type": "column"
+            "type": "column",
+            "backgroundColor": "white"
           },
           "title": {
             "text": "Usage Trend"
           },
           "xAxis": {
-            "categories": [
-              "Dec 01, 2017",
-              "Dec 02, 2017",
-              "Dec 03, 2017",
-              "Dec 04, 2017",
-              "Dec 05, 2017"
-            ],
-            "crosshair": true
+            "type": "datetime",
+            "categories": this.getDateRange(),
+            dateTimeLabelFormats: {
+                hour: '%l:%M %p'
+            },
+            labels: {
+                formatter: function() {
+                    return Highcharts.dateFormat('%d %b, %Y', this.value);
+                }
+            }
           },
           "yAxis": {
             "min": 0,
             "title": {
               "text": "Number of Employees"
             }
+          },
+          "tooltip": {
+            "headerFormat": '<span style="font-size:10px">{point.key}</span><table>',
+            "pointFormat": '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y}</b></td></tr>',
+            "footerFormat": '</table>',
+            "shared": true,
+            "useHTML": true
           },
           "plotOptions": {
             "column": {
@@ -158,9 +190,9 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
                 400,
                 500,
                 550,
-                390,
-                300
-              ]
+                390
+              ],
+               "color":"blue"
             },
             {
               "name": "Actual",
@@ -168,9 +200,9 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
                 350,
                 450,
                 430,
-                340,
-                100
-              ]
+                340
+              ],
+              "color":"green"
             }
           ]    
         };
@@ -179,17 +211,23 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
 
     getWastageChartConfig() {
         let chartConfig = {
+          "chart": {
+            "backgroundColor": "white"
+          },
           "title": {
             "text": "Wastage Trend"
           },
           "xAxis": {
-            "categories": [
-              "Dec 01, 2017",
-              "Dec 02, 2017",
-              "Dec 03, 2017",
-              "Dec 04, 2017",
-              "Dec 05, 2017"
-            ]
+            "type": "datetime",
+            "categories": this.getDateRange(),
+            dateTimeLabelFormats: {
+                hour: '%l:%M %p'
+            },
+            labels: {
+                formatter: function() {
+                    return Highcharts.dateFormat('%d %b, %Y', this.value);
+                }
+            }
           },
           "yAxis": {
             "title": {
@@ -197,9 +235,13 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
             }
           },
           "legend": {
-            "layout": "vertical",
-            "align": "right",
-            "verticalAlign": "middle"
+            "align": "center",
+            "verticalAlign": "bottom"
+          },
+          "tooltip": {
+            "formatter": function() {
+                return 'Wastage: <b>' + this.point.y + ' KG</b>';
+            }
           },
           "plotOptions": {
             "series": {
@@ -212,11 +254,10 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
             {
               "name": "Wastage",
               "data": [
-                10,
                 12,
-                9,
-                30,
-                5
+                8,
+                7,
+                10
               ]
             }
           ],
