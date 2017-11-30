@@ -4,7 +4,26 @@
 }
 
 .bakasur-chart-div {
-    width: 80%;
     margin: auto;
-    padding: 40px 20px;
+    padding: 10px 20px;
+}
+
+.score-headings {
+    margin-bottom: 25px;
+}
+
+.big-no {
+    font-size: 40px;
+    color: #337ab7;
+}
+
+.big-text {
+    font-size: 14px;
+}
+
+.bakasur-chart-div.ratings-trend, .bakasur-chart-div.wastage-trend  {
+    /* width: 42%;
+    margin-left: 3%;
+    margin-right: 3%; */
+    height: 350px;
 }
