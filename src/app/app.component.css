@@ -72,3 +72,50 @@ nav > div, nav > div > div {
 .app-content {
     padding-top: 50px;
 }
+
+::ng-deep .user-ratings {
+    margin-bottom: 30px;
+}
+
+::ng-deep .user-ratings mat-icon {
+    font-size: 30px;
+    width: 19%;
+    color: gold;
+    font-size: 50px;
+    -webkit-transition: all 400ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition:all 400ms  cubic-bezier(0.42, 0, 0.58, 1);
+    -ms-transition: all 400ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 400ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 400ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+::ng-deep .user-ratings mat-icon:hover, ::ng-deep .user-ratings mat-icon.active {
+    -webkit-transform: scale3d(1.2,1.2, 1.2);
+    -moz-transform: scale3d(1.2,1.2, 1.2);
+    -ms-transform: scale3d(1.2,1.2, 1.2);
+    -o-transform: scale3d(1.2,1.2, 1.2);
+    transform: scale3d(1.2,1.2, 1.2);
+    cursor: pointer;
+    -webkit-transition: all 400ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition:all 400ms  cubic-bezier(0.42, 0, 0.58, 1);
+    -ms-transition: all 400ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 400ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 400ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+::ng-deep .user-ratings mat-icon.rating-1:hover, ::ng-deep .user-ratings mat-icon.rating-1.active {
+    color: rgb(228, 15, 15);
+}
+
+::ng-deep .user-ratings mat-icon.rating-2:hover, ::ng-deep .user-ratings mat-icon.rating-2.active {
+    color: #ff09099e;
+}
+::ng-deep .user-ratings mat-icon.rating-3:hover, ::ng-deep .user-ratings mat-icon.rating-3.active {
+    color: rgb(39, 97, 151);
+}
+::ng-deep .user-ratings mat-icon.rating-4:hover, ::ng-deep .user-ratings mat-icon.rating-4.active {
+    color: rgb(27, 182, 27);
+}
+::ng-deep .user-ratings mat-icon.rating-5:hover, ::ng-deep .user-ratings mat-icon.rating-5.active {
+    color: green;
+}

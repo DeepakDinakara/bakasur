@@ -1,1 +1,19 @@
-<div>HI</div>
+<div class="example-container">
+
+    <div class="user-ratings col-md-12">
+        <mat-icon class="rating-1" aria-label="4 Star" (click)="addRating(1)" [ngClass]="{'active': rating === 1}">sentiment_very_dissatisfied</mat-icon>
+        <mat-icon class="rating-2" aria-label="dissatisfied" (click)="addRating(2)" [ngClass]="{'active': rating === 2}">sentiment_dissatisfied</mat-icon>
+        <mat-icon class="rating-3" aria-label="3 Star" (click)="addRating(3)" [ngClass]="{'active': rating === 3}">sentiment_neutral</mat-icon>
+        <mat-icon class="rating-4" aria-label="2 Star" (click)="addRating(4)" [ngClass]="{'active': rating === 4}">sentiment_satisfied</mat-icon>
+        <mat-icon class="rating-5" aria-label="5 Star" (click)="addRating(5)" [ngClass]="{'active': rating === 5}">sentiment_very_satisfied</mat-icon>
+    </div>
+
+    <mat-form-field class="col-md-12">
+        <textarea matInput placeholder="Feedback"></textarea>
+    </mat-form-field>
+
+    <div mat-dialog-actions class="col-md-12 pull-right">
+        <button mat-raised-button [mat-dialog-close]="" tabindex="2">Done</button>
+    </div>
+
+</div>

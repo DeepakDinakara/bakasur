@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
+
 
 @Component({
   selector: 'app-menu',
@@ -9,7 +10,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 })
 export class MenuComponent {
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog, public snackBar: MatSnackBar) {
   }
 
   daysCount = [1, 2, 3, 4, 5, 6];
@@ -235,12 +236,14 @@ export class MenuComponent {
 
   openFeedbackDialog(): void {
     let dialogRef = this.dialog.open(FeedbackComponent, {
-      width: '250px'
+      width: '500px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('Feedback dialog was closed');
-
+      this.snackBar.open('Feedback Received. Thanks!', 'Success', {
+        duration: 1000,
+        panelClass: 'success-color'
+      });
     });
   }
 
@@ -263,12 +266,17 @@ export class MenuComponent {
 })
 export class FeedbackComponent {
 
+  rating: number;
   constructor(
     public dialogRef: MatDialogRef<FeedbackComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  addRating(inputRating: number): void {
+    this.rating = inputRating;
   }
 
 }
