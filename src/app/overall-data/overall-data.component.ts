@@ -15,6 +15,7 @@ declare var Highstock: any;
 export class OverallDataComponent implements OnInit, AfterViewInit {
 
   dateToday: Date;
+  employeesCount: number = 1700;
   registeredCount: number = 580;
   swipedCount: number = 12;
   remainingCount: number = 568;
