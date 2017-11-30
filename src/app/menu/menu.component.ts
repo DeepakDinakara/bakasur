@@ -252,7 +252,8 @@ export class MenuComponent {
 
   openMenuDetails(): void {
     let dialogRef = this.dialog.open(MenuDetailsComponent, {
-      width: '450px'
+      width: '650px',
+      height: '80vh'
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -298,6 +299,5 @@ export class MenuDetailsComponent {
   onNoClick(): void {
     this.dialogRef.close();
   }
-
 
 }

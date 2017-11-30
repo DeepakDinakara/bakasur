@@ -1,7 +1,7 @@
 .menu-it-list{
   border-collapse: collapse;
     width: 100%;
-    font-size:10px;
+    font-size:12px;
 }
 
 .menu-it-list td, .menu-it-list th {
@@ -17,10 +17,14 @@
     padding-top: 4px;
     padding-bottom: 4px;
     text-align: left;
-    background-color: #4CAF50;
+    background-color: #68a569;
     color: white;
+    width: 50%;
 }
 div.item-type{
   font-weight:bold;
   text-align: center;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  color: #333;
 }
