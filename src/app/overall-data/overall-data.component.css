@@ -19,12 +19,18 @@
 }
 
 .big-text {
-    font-size: 14px;
+    font-size: 13px;
+    letter-spacing: 1.2px;
 }
 
 .bakasur-chart-div.ratings-trend, .bakasur-chart-div.wastage-trend  {
     /* width: 42%;
     margin-left: 3%;
     margin-right: 3%; */
+    margin-left: 5%;
+    margin-top: 15px;
+    width: 40%;
     height: 350px;
+    border: 1px solid #CCC;
+    border-radius: 15px;
 }
