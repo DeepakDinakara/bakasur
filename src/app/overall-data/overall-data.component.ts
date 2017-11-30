@@ -134,6 +134,11 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
           "data": [{ "y": 2.4, "rating": [10, 8, 8, 6, 5] }, { "y": 2.94, "rating": [8, 7, 7, 7, 7] }, { "y": 3.1, "rating": [5, 6, 7, 8, 6] }, { "y": 2.7, "rating": [8, 9, 5, 4, 6] }]
         }
       ],
+      "navigation": {
+        "buttonOptions": {
+            "enabled": false
+        }
+      },
       "responsive": {
         "rules": [
           {
@@ -163,6 +168,11 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
       "credits": {
         "enabled": false
       },
+      "navigation": {
+        "buttonOptions": {
+            "enabled": false
+        }
+    },
       "title": {
         "text": "Usage Trend"
       },
@@ -280,6 +290,11 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
           ]
         }
       ],
+      "navigation": {
+        "buttonOptions": {
+            "enabled": false
+        }
+    },
       "responsive": {
         "rules": [
           {
