@@ -51,9 +51,10 @@ mat-card-actions .mat-mini-fab {
 
 }
 
-mat-card-actions .mat-icon {
+/*mat-card-actions .mat-icon {
     color: #ff09099e
-}
+}*/
+
 
 mat-card-actions .action-item-span {
     margin-right: 10px;
