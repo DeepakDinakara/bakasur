@@ -1,22 +1,15 @@
-
-.example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-}
-
-.mat-card{
-  width:25%;
-  float:left;
-}
-.akam-menu-card {
-    width: 400px;
-    width: 25%;
-    height:400px;
+.menu-page {
+    margin: 10px 30px;
+    float: left;
 }
 
 .akam-menu-card.mat-card {
     padding: 10px 10px 20px 10px;
-    margin: 10px;
+    margin: 10px 35px 20px 35px;
+    width: 400px;
+    width: 28%;
+    float: left;
+    height: 400px;
 }
 
 .akam-menu-card.mat-card .mat-card-title {
@@ -67,4 +60,35 @@ mat-card-actions .action-item-span {
 
 mat-card-actions .action-item-span button{
     margin-left: -8px;
+}
+
+
+img.carousel-img {
+    width: 370px;
+    height: 210px;
+}
+
+::ng-deep .mat-tab-header-pagination.mat-tab-header-pagination-disabled {
+    display: none !important;
+}
+
+::ng-deep .mat-tab-header-pagination.mat-tab-header-pagination-enabled {
+    display: none !important;
+}
+
+::ng-deep .mat-tab-header-pagination.mat-tab-header-pagination-after {
+    display: none !important;
+}
+
+::ng-deep .mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination {
+    display: none;
+}
+
+::ng-deep .mat-tab-label {
+    width: 50% !important;
+}
+
+::ng-deep .mat-tab-link {
+    padding: 0 15px !important;
+    min-width: 90px !important;
 }

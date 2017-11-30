@@ -1,6 +1,6 @@
 #roster {
     margin: auto;
-    width: 80%;
+    width: 85%;
     margin-top: 20px;
 
 }
@@ -10,4 +10,10 @@
     margin-top: 15px;
     margin-right: 25px;
     float: right;
+    background: #63c364;
+    color: white;
+}
+
+#roster button mat-icon {
+    margin-left: 5px;
 }

@@ -12,7 +12,7 @@ nav a {
     opacity: 0.9;
     float: right;
     font-weight: normal;
-    letter-spacing: 1px;
+    letter-spacing: 0.3px;
 }
 
 nav a > .mat-icon {
