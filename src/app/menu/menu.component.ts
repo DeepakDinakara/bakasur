@@ -246,7 +246,7 @@ export class MenuComponent {
 
   openMenuDetails(): void {
     let dialogRef = this.dialog.open(MenuDetailsComponent, {
-      width: '250px'
+      width: '450px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -276,6 +276,7 @@ export class FeedbackComponent {
 @Component({
   selector: 'menu-details-component',
   templateUrl: 'menu-details.html',
+  styleUrls: ['./menu-details.component.css']
 })
 export class MenuDetailsComponent {
 
@@ -286,5 +287,6 @@ export class MenuDetailsComponent {
   onNoClick(): void {
     this.dialogRef.close();
   }
+
 
 }

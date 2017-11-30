@@ -1,0 +1,26 @@
+.menu-it-list{
+  border-collapse: collapse;
+    width: 100%;
+    font-size:10px;
+}
+
+.menu-it-list td, .menu-it-list th {
+    border: 1px solid #ddd;
+    padding: 4px;
+}
+
+.menu-it-list tr:nth-child(even){background-color: #f2f2f2;}
+
+.menu-it-list tr:hover {background-color: #ddd;}
+
+.menu-it-list th {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+div.item-type{
+  font-weight:bold;
+  text-align: center;
+}
