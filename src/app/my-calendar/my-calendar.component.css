@@ -321,6 +321,7 @@
     box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
     border-radius: 8px;
     border: 1px solid #ffffff;
+    pointer-events: all !important;
   }
   .event-block {
     display: block;
@@ -543,3 +544,25 @@
     background-color: #b94a48;
   }
   
+
+  .ratings {
+    padding: 3px 10px;
+    width: 30px;
+    width: 85px;
+  }
+
+  .ratings:hover, a.event:hover {
+    -webkit-transform: scale(1.2,1.2);
+    -moz-transform: scale(1.2,1.2);
+    -ms-transform: scale(1.2,1.2);
+    -o-transform: scale(1.2,1.2);
+    transform: scale(1.2,1.2);
+    cursor: pointer;
+  }
+
+  .ratings mat-icon {
+    font-size: 15px;
+    color: #e2bb09;
+    width: 12px;
+    pointer-events: all; 
+  }
