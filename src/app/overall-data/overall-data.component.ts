@@ -39,6 +39,7 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
     this.renderUsageTrendChart();
     this.renderRatingsTrendChart();
     this.renderWastageTrendChart();
+    this.renderHeatMapChart();
   }
 
 
@@ -80,14 +81,17 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
     jQuery('#wastageTrendContainer').highcharts(this.getWastageChartConfig());
   }
 
+  renderHeatMapChart() {
+    jQuery('#heatMapContainer').highcharts(this.getHeatMapChartConfig());
+  }
+
   getDateRange() {
-    return this.getCurrentWeekDateRange();
+    return new Array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
   }
 
   getRatingsChartConfig() {
     let chartConfig = {
       "chart": {
-        "zoomType": "x",
         "backgroundColor": "white"
       },
       "credits": {
@@ -97,20 +101,11 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
         "text": "Ratings Trend"
       },
       "xAxis": {
-        "type": "datetime",
-        "categories": this.getDateRange(),
-        "dateTimeLabelFormats": {
-          "hour": '%l:%M %p'
-        },
-        labels: {
-          formatter: function () {
-            return Highcharts.dateFormat('%d %b, %Y', this.value);
-          }
-        }
+        "categories": this.getDateRange()
       },
       "yAxis": {
         "title": {
-          "text": "Average Ratings"
+          "text": "Average Rating"
         }
       },
       "legend": {
@@ -135,7 +130,7 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
         {
           "type": "line",
           "name": "Average Ratings",
-          "data": [{ "y": 2.4, "rating": [10, 8, 8, 6, 5] }, { "y": 2.94, "rating": [8, 7, 7, 7, 7] }, { "y": 3.1, "rating": [5, 6, 7, 8, 6] }, { "y": 2.7, "rating": [8, 9, 5, 4, 6] }]
+          "data": [{ "y": 2.4, "rating": [10, 8, 8, 6, 5] }, { "y": 2.94, "rating": [8, 7, 7, 7, 7] }, { "y": 3.1, "rating": [5, 6, 7, 8, 6] }, { "y": 2.7, "rating": [8, 9, 5, 4, 6] },{ "y": 2.1, "rating": [15, 10, 10, 6, 5] }]
         }
       ],
       "navigation": {
@@ -166,7 +161,7 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
   getUsageChartConfig() {
     let chartConfig = {
       "chart": {
-        "type": "bar",
+        "type": "column",
         "backgroundColor": "white"
       },
       "credits": {
@@ -178,19 +173,10 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
         }
       },
       "title": {
-        "text": "Usage Trend"
+        "text": "Usage"
       },
       "xAxis": {
-        "type": "datetime",
-        "categories": this.getDateRange(),
-        dateTimeLabelFormats: {
-          hour: '%l:%M %p'
-        },
-        labels: {
-          formatter: function () {
-            return Highcharts.dateFormat('%d %b, %Y', this.value);
-          }
-        }
+        "categories": this.getDateRange()
       },
       "yAxis": {
         "min": 0,
@@ -199,7 +185,7 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
         }
       },
       "tooltip": {
-        "headerFormat": '<span style="font-size:10px">{point.key}</span><table>',
+        "headerFormat": '<span style="font-size:10px"></span><table>',
         "pointFormat": '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
         '<td style="padding:0"><b>{point.y}</b></td></tr>',
         "footerFormat": '</table>',
@@ -219,7 +205,8 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
             400,
             500,
             550,
-            390
+            390,
+            350
           ],
           "color": "#36a1eb"
         },
@@ -229,7 +216,8 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
             350,
             450,
             430,
-            440
+            440,
+            200
           ],
           "color": "#bbe07f"
         }
@@ -250,16 +238,7 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
         "enabled": false
       },
       "xAxis": {
-        "type": "datetime",
-        "categories": this.getDateRange(),
-        dateTimeLabelFormats: {
-          hour: '%l:%M %p'
-        },
-        labels: {
-          formatter: function () {
-            return Highcharts.dateFormat('%d %b, %Y', this.value);
-          }
-        }
+        "categories": this.getDateRange()
       },
       "yAxis": {
         "title": {
@@ -289,9 +268,10 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
           "name": "Wastage",
           "data": [
             12,
-            8,
-            7,
-            10
+            8.5,
+            7.5,
+            10.3,
+            12.5
           ]
         }
       ],
@@ -316,6 +296,78 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
           }
         ]
       }
+    };
+    return chartConfig;
+  }
+
+  getHeatMapChartConfig() {
+    let chartConfig = {
+        title: {
+            text: 'Time Trend'
+        },
+        "credits": {
+          "enabled": false
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            area: {
+                fillColor: {
+                    linearGradient: {
+                        x1: 0,
+                        y1: 0,
+                        x2: 0,
+                        y2: 1
+                    },
+                    stops: [
+                        [0, Highcharts.getOptions().colors[0]],
+                        [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                    ]
+                },
+                marker: {
+                    radius: 2
+                },
+                lineWidth: 1,
+                states: {
+                    hover: {
+                        lineWidth: 1
+                    }
+                },
+                threshold: null
+            }
+        },
+        series: [{
+            type: 'area',
+            name: 'No of Employees',
+            data: dataVal
+        }],
+        "navigation": {
+          "buttonOptions": {
+            "enabled": false
+          }
+        },
+        xAxis: {
+          type: 'datetime',
+          dateTimeLabelFormats: {
+            day: '%H:%M:%S'
+          },
+          labels: {
+            formatter: function () {
+              return Highcharts.dateFormat('%H %M', this.value);
+            }
+          },
+          title: {
+              text: 'Time'
+          }
+        },
+        "yAxis": {
+          "tickInterval": 2,
+          "min": 0,
+          "title": {
+            "text": "Number of Employees"
+          }
+        }
     };
     return chartConfig;
   }
