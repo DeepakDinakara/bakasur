@@ -54,9 +54,9 @@ export class MenuComponent {
     "6_2": 0
   };
   descriptions = {
-    "1_1": "Veg. Munchow, Chilly Paneer Dry ,Veg Chopsouey , Malai Kofta, Tandoori Roti,Steam Rice, Sambhar Vada, Jalebi, Curd, Butter Milk , Papad ",
+    "1_1": "Tomato Soup, Tandoori Paneer Tikka, Russian Salad / Maccroni, Dal Makhani,Tandoori Roti,Sambhar Rice, Mix Veg. Pulao, Gulab Jamun, Curd, Butter Milk , Papad",
     "1_2": "Veg. Clear Soup, Veg. Manchurian Dry, Chilly Paneer Gravy, Roomali Roti , Soya Dum Biryani, Dahi Vada, Badusha,Curd, Butter Milk , Papad",
-    "2_1": "Tomato Soup, Tandoori Paneer Tikka, Russian Salad / Maccroni, Dal Makhani,Tandoori Roti,Sambhar Rice, Mix Veg. Pulao, Gulab Jamun, Curd, Butter Milk , Papad",
+    "2_1": "Veg. Munchow, Chilly Paneer Dry ,Veg Chopsouey , Malai Kofta, Tandoori Roti,Steam Rice, Sambhar Vada, Jalebi, Curd, Butter Milk , Papad ",
     "2_2": "Lemon & Coriander, Veg. Manchurian Dry, Sweet & Sour Veg, Veg Hakka Noodles, Chilly Garlic Rice, Jeera Pulao, Tawa Parantha, Rajma ,Rava Kesri, Sambhar Rice, Mix Veg. Pulao, Rasgulla,Curd, Butter Milk , Papad",
     "3_1": "Veg. Noodle Soup, Potatoes in Honey & Chilly , Manchurian Gravy, Butter Roti, Veg. Pulao, Dosa (Butter), Icecream,Curd, Butter Milk , Papad",
     "3_2": "Hot & Sour,Fried Vegetables in Salt, Sweet & Sour Veg, Plain Naan, Mix Veg. Pulao, Paper Dosa, Laddu,Curd, Butter Milk , Papad",
@@ -70,6 +70,19 @@ export class MenuComponent {
   };
   menus = {
     "1_1": [
+      "http://www.vegrecipesofindia.com/wp-content/uploads/2013/12/tomato-soup-recipe-4.jpg",
+      "https://media-cdn.tripadvisor.com/media/photo-s/0b/71/97/4a/north-indian-food-kaitaia.jpg",
+      "https://indianhealthyrecipes.com/wp-content/uploads/2017/08/paneer-lababdar.jpg",
+      "http://www.maavalanindiatravels.com/wp-content/uploads/2016/01/Best-Indian-Food-dal-makhani.jpg",
+      "https://indianhealthyrecipes.com/wp-content/uploads/2017/10/bhindi-masala-recipe-348x232.jpg",
+      "https://i0.wp.com/files.hungryforever.com/wp-content/uploads/2017/06/20131010/easy-rasgulla-recipes-600x451.jpg",
+      "http://www.whatshelikes.in/wp-content/uploads/2014/06/phulka-indian-roti-1000x563.jpg",
+      "http://pindpunjabidhaba.in/wp-content/uploads/2016/10/papad.jpg",
+      "https://cdn.awesomecuisine.com/wp-content/uploads/2008/11/masala_buttermilk.jpg",
+      "https://dailypost.in/wp-content/uploads/2017/10/curd.jpg"
+    ],
+    "2_1": [
+      "https://www.archanaskitchen.com//images/archanaskitchen/World_Asian/Vegetable_Manchow_Soup.jpg",
       "http://www.fnstatic.co.uk/images/content/package/101-amazing-indian-recipes.jpeg",
       "http://images.indianexpress.com/2017/11/khichdi_759.jpg",
       "http://www.chingssecret.com/images/family_banner_1200_370.jpg",
@@ -82,18 +95,8 @@ export class MenuComponent {
       "https://cdn.awesomecuisine.com/wp-content/uploads/2008/11/masala_buttermilk.jpg",
       "https://dailypost.in/wp-content/uploads/2017/10/curd.jpg"
     ],
-    "2_1": [
-      "https://media-cdn.tripadvisor.com/media/photo-s/0b/71/97/4a/north-indian-food-kaitaia.jpg",
-      "https://indianhealthyrecipes.com/wp-content/uploads/2017/08/paneer-lababdar.jpg",
-      "http://www.maavalanindiatravels.com/wp-content/uploads/2016/01/Best-Indian-Food-dal-makhani.jpg",
-      "https://indianhealthyrecipes.com/wp-content/uploads/2017/10/bhindi-masala-recipe-348x232.jpg",
-      "https://i0.wp.com/files.hungryforever.com/wp-content/uploads/2017/06/20131010/easy-rasgulla-recipes-600x451.jpg",
-      "http://www.whatshelikes.in/wp-content/uploads/2014/06/phulka-indian-roti-1000x563.jpg",
-      "http://pindpunjabidhaba.in/wp-content/uploads/2016/10/papad.jpg",
-      "https://cdn.awesomecuisine.com/wp-content/uploads/2008/11/masala_buttermilk.jpg",
-      "https://dailypost.in/wp-content/uploads/2017/10/curd.jpg"
-    ],
     "3_1": [
+      "https://du7ybees82p4m.cloudfront.net/56a288e117d3f8.50310584.jpg",
       "https://www.fitfoodie.in/sites/default/files/02_0.jpg",
       "https://media-cdn.tripadvisor.com/media/photo-s/0b/71/97/4d/north-indian-food-kaitaia.jpg",
       "http://www.foodofy.com/wp-content/uploads/2015/07/north-indian-foods-15.jpg",
