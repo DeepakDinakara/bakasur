@@ -70,9 +70,8 @@
               <span class="action-item-span">
                 <span>{{getLikes(d,1)}}</span>
 
-                <button [disabled]="!canLike(d)" mat-icon-button (click)="like(d,1)" color="warn">
-                  <mat-icon aria-label="favorite button">favorite</mat-icon>
-
+                <button [disabled]="!canLike(d)" mat-icon-button (click)="like(d,1)">
+                  <mat-icon [ngClass]="{'disabled-icon': !canLike(d)}" aria-label="favorite button">favorite</mat-icon>
                 </button>
 
               </span>
@@ -80,7 +79,7 @@
               <span class="action-item-span">
                 <span>{{getDisLikes(d,1)}}</span>
                 <button [disabled]="!canLike(d)" mat-icon-button (click)="disLike(d,1)" color="warn">
-                  <mat-icon aria-label="dislike button">thumb_down</mat-icon>
+                  <mat-icon [ngClass]="{'disabled-icon': !canLike(d)}" aria-label="dislike button">thumb_down</mat-icon>
                 </button>
               </span>
 
@@ -94,8 +93,8 @@
               </span>
 
               <span class="action-item-span">
-                <button mat-icon-button color="warn" (click)="openFeedbackDialog()">
-                  <mat-icon aria-label="register button">feedback</mat-icon>
+                <button [disabled]="canLike(d)" mat-icon-button color="warn" (click)="openFeedbackDialog()">
+                  <mat-icon [ngClass]="{'disabled-icon': canLike(d)}" aria-label="register button">feedback</mat-icon>
                 </button>
               </span>
 
@@ -160,14 +159,14 @@
               <span class="action-item-span">
                 <span>{{getLikes(d,2)}}</span>
                 <button [disabled]="!canLike(d)" mat-icon-button (click)="like(d,2)" color="warn">
-                  <mat-icon aria-label="favorite button">favorite</mat-icon>
+                  <mat-icon [ngClass]="{'disabled-icon': !canLike(d)}" aria-label="favorite button">favorite</mat-icon>
                 </button>
               </span>
 
               <span class="action-item-span">
                 <span>{{getDisLikes(d,2)}}</span>
                 <button [disabled]="!canLike(d)" mat-icon-button (click)="disLike(d,2)" color="warn">
-                  <mat-icon aria-label="dislike button">thumb_down</mat-icon>
+                  <mat-icon [ngClass]="{'disabled-icon': !canLike(d)}" aria-label="dislike button">thumb_down</mat-icon>
                 </button>
               </span>
 
@@ -181,8 +180,8 @@
               </span>
 
               <span class="action-item-span">
-                <button mat-icon-button color="warn" (click)="openFeedbackDialog()">
-                  <mat-icon aria-label="register button">feedback</mat-icon>
+                <button [disabled]="canLike(d)" mat-icon-button color="warn" (click)="openFeedbackDialog()">
+                  <mat-icon [ngClass]="{'disabled-icon': canLike(d)}" aria-label="register button">feedback</mat-icon>
                 </button>
               </span>
 
