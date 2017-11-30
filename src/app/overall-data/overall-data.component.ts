@@ -62,8 +62,9 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
     getCurrentWeekDateRange() {
         let dateRange: Date[] = new Array();
         let weekStartDate:Date = this.getFirstDayOfWeek();
+        let offset = new Date().getTimezoneOffset()*60*1000;
         for(let time = weekStartDate.getTime();time<this.dateToday.getTime();time = time+86400000) {
-            dateRange.push(new Date(time));
+            dateRange.push(new Date(time-offset));
         }
         return dateRange;
     }
