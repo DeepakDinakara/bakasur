@@ -58,13 +58,13 @@ export class MenuComponent {
     "1_2": "Veg. Clear Soup, Veg. Manchurian Dry, Chilly Paneer Gravy, Roomali Roti , Soya Dum Biryani, Dahi Vada, Badusha,Curd, Butter Milk , Papad",
     "2_1": "Veg. Munchow, Chilly Paneer Dry ,Veg Chopsouey , Malai Kofta, Tandoori Roti,Steam Rice, Sambhar Vada, Jalebi, Curd, Butter Milk , Papad ",
     "2_2": "Lemon & Coriander, Veg. Manchurian Dry, Sweet & Sour Veg, Veg Hakka Noodles, Chilly Garlic Rice, Jeera Pulao, Tawa Parantha, Rajma ,Rava Kesri, Sambhar Rice, Mix Veg. Pulao, Rasgulla,Curd, Butter Milk , Papad",
-    "3_1": "Veg. Noodle Soup, Potatoes in Honey & Chilly , Manchurian Gravy, Butter Roti, Veg. Pulao, Dosa (Butter), Icecream,Curd, Butter Milk , Papad",
+    "3_1": "Lemon dill soup, Potatoes in Honey & Chilly , Manchurian Gravy, Butter Roti, Veg. Pulao, Dosa (Butter), Icecream,Curd, Butter Milk , Papad",
     "3_2": "Hot & Sour,Fried Vegetables in Salt, Sweet & Sour Veg, Plain Naan, Mix Veg. Pulao, Paper Dosa, Laddu,Curd, Butter Milk , Papad",
-    "4_1": "Tomato Soup, Crispy Spinach & Baby - Corn, Mix. Veg. in Hot Garlic Sauce,Shahi Paneer, Butter Naan, Matka Biryani With Raita, Rawa Dosa, Bason Laddu,Curd, Butter Milk , Papad",
+    "4_1": "Mulligatawny Soup, Crispy Spinach & Baby - Corn, Mix. Veg. in Hot Garlic Sauce,Shahi Paneer, Butter Naan, Matka Biryani With Raita, Rawa Dosa, Bason Laddu,Curd, Butter Milk , Papad",
     "4_2": "Veg. Clear Soup, Chilly Mushroom Dry, Kadhai Paneer, Garlic Naan Butter,Hyderabadi Biryani , Mix Veg Uttapam, Kaju katli,Curd, Butter Milk , Papad",
-    "5_1": "Sweet Corn, Spring Roll, Paneer Butter Masala, Tawa Parantha , Veg. Pulao, Onion Rawa Dosa, Mango Burfi,Curd, Butter Milk , Papad",
+    "5_1": "Tandoori Panner Tikka, Sweet Corn, Spring Roll, Paneer Butter Masala, Tawa Parantha , Veg. Pulao, Onion Rawa Dosa, Mango Burfi,Curd, Butter Milk , Papad",
     "5_2": "Lemon & Coriander, Chilly Paneer Dry, Mushroom Masala, Laccha Parantha, Steam Rice, Mysore Dosa, Carrot Halwa,Curd, Butter Milk , Papad",
-    "6_1": "Tomato Soup, Tandoori Paneer Tikka, Russian Salad / Maccroni, Dal Makhani,Tandoori Roti,Sambhar Rice, Mix Veg. Pulao, Gulab Jamun, Curd, Butter Milk , Papad",
+    "6_1": "Fried Rice, Russian Salad / Maccroni, Dal Makhani,Tandoori Roti,Sambhar Rice, Mix Veg. Pulao, Gulab Jamun, Curd, Butter Milk , Papad",
     "6_2": "Lemon & Coriander, Veg. Manchurian Dry, Sweet & Sour Veg, Veg Hakka Noodles, Chilly Garlic Rice, Jeera Pulao, Tawa Parantha, Rajma ,Rava Kesri, Sambhar Rice, Mix Veg. Pulao, Rasgulla,Curd, Butter Milk , Papad",
 
   };
@@ -95,7 +95,7 @@ export class MenuComponent {
       "https://cdn.awesomecuisine.com/wp-content/uploads/2008/11/masala_buttermilk.jpg",
       "https://dailypost.in/wp-content/uploads/2017/10/curd.jpg"
     ],
-    "3_1": [
+    "3_1": ["https://i1.wp.com/feastingathome.com/wp-content/uploads/2012/03/Lemon-dill-soup-9259.jpg",
       "https://du7ybees82p4m.cloudfront.net/56a288e117d3f8.50310584.jpg",
       "https://www.fitfoodie.in/sites/default/files/02_0.jpg",
       "https://media-cdn.tripadvisor.com/media/photo-s/0b/71/97/4d/north-indian-food-kaitaia.jpg",
@@ -108,7 +108,7 @@ export class MenuComponent {
       "https://cdn.awesomecuisine.com/wp-content/uploads/2008/11/masala_buttermilk.jpg",
       "https://dailypost.in/wp-content/uploads/2017/10/curd.jpg"
     ],
-    "4_1": [
+    "4_1": ["https://i2.wp.com/foodapparel.com/wp-content/uploads/2015/03/mulligatawny-8.jpg",
       "http://bongong.com/images/recipes/Spicy_Onion_Rice/IMG_0031_1243361826_center.jpg",
       "http://justindianfood.com/wp-content/uploads/2013/12/cholemasala1.jpg",
       "https://i2.wp.com/blog.getfitso.com/wp-content/uploads/2016/10/North-Indian-Review-3-e1477471894462.jpg?resize=648%2C280",
@@ -169,7 +169,6 @@ export class MenuComponent {
       "https://myannoyingopinions.files.wordpress.com/2014/11/rajma4.jpg?w=869",
       "https://i.ytimg.com/vi/HiciJDlGDbY/maxresdefault.jpg",
       "http://www.indobase.com/recipes/rec-images/chum-chum.jpg",
-      "https://images.pachakam.com/RcpImags/North-Indian-Style-Thava-Roti-Pachakam-10430.jpghttp://l7.alamy.com/zooms/916aafe164d949129cf07b27ed993d2d/traditional-indian-roti-ready-to-serve-g0t2r5.jpg",
       "http://pindpunjabidhaba.in/wp-content/uploads/2016/10/papad.jpg",
       "https://cdn.awesomecuisine.com/wp-content/uploads/2008/11/masala_buttermilk.jpg",
       "https://dailypost.in/wp-content/uploads/2017/10/curd.jpg"
@@ -185,7 +184,9 @@ export class MenuComponent {
       "https://cdn.awesomecuisine.com/wp-content/uploads/2008/11/masala_buttermilk.jpg",
       "https://dailypost.in/wp-content/uploads/2017/10/curd.jpg"
     ],
-    "6_1": ["https://www.tarladalal.com/members/524831/images/aam_ka_panna-1.jpg?size=250X249",
+    "6_1": [
+      "http://files.hungryforever.com/wp-content/uploads/2016/03/13122413/paneer-fried-rice.jpeg",
+      "http://carnivalmunchies.com/wp-content/uploads/2015/12/butter-milk.jpg",
       "http://www.vegrecipesofindia.com/wp-content/uploads/2015/01/hing-jeera-aloo-recipe1.jpg",
       "http://3.bp.blogspot.com/-x3BXVLRhHsc/UGyCViYg0jI/AAAAAAAAAnw/ZwaHsZxxQHo/s1600/North+Indian+food+recipes+for+Rakhi.JPG",
       "https://myannoyingopinions.files.wordpress.com/2014/11/rajma4.jpg?w=869",
@@ -193,7 +194,6 @@ export class MenuComponent {
       "https://du7ybees82p4m.cloudfront.net/56a288e117d3f8.50310584.jpg",
       "http://www.vegrecipesofindia.com/wp-content/uploads/2016/09/khasta-roti-recipe-2.jpg",
       "http://pindpunjabidhaba.in/wp-content/uploads/2016/10/papad.jpg",
-      "https://cdn.awesomecuisine.com/wp-content/uploads/2008/11/masala_buttermilk.jpg",
       "https://dailypost.in/wp-content/uploads/2017/10/curd.jpg"],
 
     "6_2": ["http://www.vegrecipesofindia.com/wp-content/uploads/2013/12/tomato-soup-recipe-4.jpg",
