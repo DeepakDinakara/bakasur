@@ -15,9 +15,16 @@ declare var Highstock: any;
 export class OverallDataComponent implements OnInit, AfterViewInit {
 
   dateToday: Date;
+  registeredCount: number = 580;
+  swipedCount: number = 12;
+  remainingCount: number = 568;
 
   constructor() {
-
+    setInterval(() => {
+      let count = Math.floor(Math.random() * 6);
+      this.swipedCount += count;
+      this.remainingCount -= count;
+    }, 2000);
   }
 
   ngOnInit() {
