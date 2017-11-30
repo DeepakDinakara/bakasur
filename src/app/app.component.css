@@ -2,6 +2,10 @@ nav {
     background: #181618;
     margin-bottom: 20px;
     padding: 0 50px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 100;
 }
 
 
@@ -44,4 +48,8 @@ nav > div, nav > div > div {
     vertical-align: middle;
     width: 44px;
     margin-right: 12px;
+}
+
+.app-content {
+    padding-top: 50px;
 }

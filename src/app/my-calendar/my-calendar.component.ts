@@ -9,19 +9,24 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MyCalendarComponent {
 
   lastDaySelected: number;
+  Arr: Array<number>;
 
   calendarData = {
     weeks: [{
       days: [{
         day: 26
       }, {
-        day: 27
+        day: 27,
+        rating: [1, 2, 3]
       }, {
         day: 28
       }, {
-        day: 29
+        day: 29,
+        rating: [1, 2, 3, 4],
+        isWarning1: true
       }, {
-        day: 30
+        day: 30,
+        isWarning2: true
       }, {
         day: 1,
         isCurrentMonth: true,
@@ -111,7 +116,8 @@ export class MyCalendarComponent {
         isCurrentMonth: true,
       }, {
         isCurrentMonth: true,
-        day: 26
+        day: 26,
+        isSpecial: true
       }, {
         isCurrentMonth: true,
         day: 27
@@ -146,25 +152,27 @@ export class MyCalendarComponent {
   };
 
   onRoster($event, daysData) {
-    daysData.isRostered = !daysData.isRostered;
-    if (this.lastDaySelected && $event.shiftKey) {
-      let diff = this.lastDaySelected - daysData.day;
-      let lastDateSelected = this.lastDaySelected;
-      this.calendarData.weeks.forEach(function (week: any) {
-        week.days.forEach(function (localDay: any, weekIndex: Number) {
-          if (diff > 0) {
-            if (localDay.day <= lastDateSelected && localDay.day >= daysData.day && localDay.isCurrentMonth && (weekIndex !== 0 && weekIndex !== 6)) {
-              localDay.isRostered = true;
+    if (daysData.isCurrentMonth) {
+      daysData.isRostered = !daysData.isRostered;
+      if (this.lastDaySelected && $event.shiftKey) {
+        let diff = this.lastDaySelected - daysData.day;
+        let lastDateSelected = this.lastDaySelected;
+        this.calendarData.weeks.forEach(function (week: any) {
+          week.days.forEach(function (localDay: any, weekIndex: Number) {
+            if (diff > 0) {
+              if (localDay.day <= lastDateSelected && localDay.day >= daysData.day && localDay.isCurrentMonth && (weekIndex !== 0 && weekIndex !== 6)) {
+                localDay.isRostered = true;
+              }
+            } else {
+              if (localDay.day > lastDateSelected && localDay.day <= daysData.day && localDay.isCurrentMonth && (weekIndex !== 0 && weekIndex !== 6)) {
+                localDay.isRostered = true;
+              }
             }
-          } else {
-            if (localDay.day > lastDateSelected && localDay.day <= daysData.day && localDay.isCurrentMonth && (weekIndex !== 0 && weekIndex !== 6)) {
-              localDay.isRostered = true;
-            }
-          }
+          });
         });
-      });
+      }
+      this.lastDaySelected = daysData.day;
     }
-    this.lastDaySelected = daysData.day;
   }
 
 }

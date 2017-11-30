@@ -25,6 +25,19 @@
           (click)="onRoster($event, daysData)">
           <span class="pull-right" [attr.data-cal-date]="daysData.day" [attr.data-cal-view]="daysData.day" data-toggle="tooltip" title=""
             data-original-title="">{{daysData.day}}</span>
+
+          <div class="events-list">
+            <a class="pull-left event event-important" *ngIf="daysData.isWarning1" matTooltip="You ate without registering! kindly avoid this and help us plan better!"
+              [matTooltipPosition]="'right'"></a>
+            <a class="pull-left event event-warning" *ngIf="daysData.isWarning2" matTooltip="You dint show up! Help reducing wastage and save your money!"
+              [matTooltipPosition]="'right'"></a>
+
+            <a class="pull-left event event-info" *ngIf="daysData.isSpecial" matTooltip="Special Lunch!!" [matTooltipPosition]="'right'"></a>
+          </div>
+
+          <div class="ratings" ng-if="daysData.rating" matTooltip="Your rating" [matTooltipPosition]="'below'">
+            <mat-icon aria-label="Star Rating" *ngFor="let i of daysData.rating">star_rating</mat-icon>
+          </div>
         </div>
       </div>
     </div>
