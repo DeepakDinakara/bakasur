@@ -23,8 +23,10 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
   constructor() {
     setInterval(() => {
       let count = Math.floor(Math.random() * 6);
-      this.swipedCount += count;
-      this.remainingCount -= count;
+      if ((count + this.swipedCount) < this.employeesCount) {
+        this.swipedCount += count;
+        this.remainingCount -= count;
+      }
     }, 2000);
   }
 
@@ -138,7 +140,7 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
       ],
       "navigation": {
         "buttonOptions": {
-            "enabled": false
+          "enabled": false
         }
       },
       "responsive": {
@@ -172,9 +174,9 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
       },
       "navigation": {
         "buttonOptions": {
-            "enabled": false
+          "enabled": false
         }
-    },
+      },
       "title": {
         "text": "Usage Trend"
       },
@@ -295,9 +297,9 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
       ],
       "navigation": {
         "buttonOptions": {
-            "enabled": false
+          "enabled": false
         }
-    },
+      },
       "responsive": {
         "rules": [
           {
