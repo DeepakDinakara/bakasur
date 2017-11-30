@@ -80,6 +80,9 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
         "zoomType": "x",
         "backgroundColor": "white"
       },
+      "credits": {
+        "enabled": false
+      },
       "title": {
         "text": "Ratings Trend"
       },
@@ -147,8 +150,11 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
   getUsageChartConfig() {
     let chartConfig = {
       "chart": {
-        "type": "column",
+        "type": "bar",
         "backgroundColor": "white"
+      },
+      "credits": {
+        "enabled": false
       },
       "title": {
         "text": "Usage Trend"
@@ -202,7 +208,7 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
             350,
             450,
             430,
-            340
+            440
           ],
           "color": "#bbe07f"
         }
@@ -218,6 +224,9 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
       },
       "title": {
         "text": "Wastage Trend"
+      },
+      "credits": {
+        "enabled": false
       },
       "xAxis": {
         "type": "datetime",
