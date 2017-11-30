@@ -67,7 +67,27 @@ mat-card-actions .action-item-span button{
 img.carousel-img {
     width: 370px;
     height: 210px;
+    -webkit-transition: all 800ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition:all 800ms  cubic-bezier(0.42, 0, 0.58, 1);
+    -ms-transition: all 800ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 800ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 800ms cubic-bezier(0.42, 0, 0.58, 1);
 }
+
+img.carousel-img:hover {
+    -webkit-transform: scale(1.1,1.1);
+    -moz-transform: scale(1.1,1.1);
+    -ms-transform: scale(1.1,1.1);
+    -o-transform: scale(1.1,1.1);
+    transform: scale(1.1,1.1);
+    cursor: pointer;
+    -webkit-transition: all 800ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition:all 800ms  cubic-bezier(0.42, 0, 0.58, 1);
+    -ms-transition: all 800ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 800ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 800ms cubic-bezier(0.42, 0, 0.58, 1);
+  }
+
 p.menu-desc{
   height: 57px;
     overflow: scroll;

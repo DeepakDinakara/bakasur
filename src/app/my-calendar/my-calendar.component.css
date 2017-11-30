@@ -557,12 +557,12 @@
     -ms-transform: scale(1.2,1.2);
     -o-transform: scale(1.2,1.2);
     transform: scale(1.2,1.2);
+    cursor: pointer;
   }
 
   .ratings mat-icon {
     font-size: 15px;
     color: #e2bb09;
     width: 12px;
-    pointer-events: all;
-    cursor: pointer;
+    pointer-events: all; 
   }
