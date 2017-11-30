@@ -37,7 +37,7 @@ import {
   MatPaginatorModule
 } from '@angular/material';
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
+import { MenuComponent, FeedbackComponent, MenuDetailsComponent } from './menu/menu.component';
 import { RosterComponent } from './roster/roster.component';
 import { UserDataComponent } from './user-data/user-data.component';
 import { OverallDataComponent } from './overall-data/overall-data.component';
@@ -85,7 +85,7 @@ export class MaterialModule { }
 
 @NgModule({
   declarations: [
-    AppComponent, MenuComponent, RosterComponent, UserDataComponent, OverallDataComponent, MyCalendarComponent
+    AppComponent, MenuComponent, RosterComponent, UserDataComponent, OverallDataComponent, MyCalendarComponent, FeedbackComponent, MenuDetailsComponent
   ],
   imports: [
     BrowserModule,

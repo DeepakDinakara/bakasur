@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-menu',
@@ -6,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
+
+  constructor(public dialog: MatDialog) {
+  }
+
   daysCount = [1, 2, 3, 4, 5, 6];
   dayDetails = {
     1: { 'day': 'Wednesday', 'date': '29 Nov' },
@@ -226,4 +232,59 @@ export class MenuComponent {
   canLike(dayNumber) {
     return this.currentDay <= dayNumber;
   }
+
+  openFeedbackDialog(): void {
+    let dialogRef = this.dialog.open(FeedbackComponent, {
+      width: '250px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Feedback dialog was closed');
+
+    });
+  }
+
+  openMenuDetails(): void {
+    let dialogRef = this.dialog.open(MenuDetailsComponent, {
+      width: '250px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Menu Details dialog was closed');
+
+    });
+  }
+}
+
+
+@Component({
+  selector: 'feedback-component',
+  templateUrl: 'feedback-dialog.html',
+})
+export class FeedbackComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<FeedbackComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+}
+
+@Component({
+  selector: 'menu-details-component',
+  templateUrl: 'menu-details.html',
+})
+export class MenuDetailsComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<MenuDetailsComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
 }

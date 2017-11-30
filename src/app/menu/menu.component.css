@@ -122,3 +122,8 @@ div.menu-desc {
     padding: 0 15px !important;
     min-width: 90px !important;
 }
+
+a.roster-link-btn {
+    display: inline-flex;
+    text-decoration: none !important;
+}
