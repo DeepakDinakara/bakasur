@@ -31,6 +31,7 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
     this.renderWastageTrendChart();
   }
 
+
   getFirstDayOfWeek() {
     let dateVal = new Date();
     let day = dateVal.getDay();
@@ -38,6 +39,16 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
     let firstDay = new Date(dateVal.setDate(diff));
     firstDay.setHours(0, 0, 0, 0);
     return firstDay;
+  }
+
+  getCurrentWeekDateRange() {
+    let dateRange: Date[] = new Array();
+    let weekStartDate: Date = this.getFirstDayOfWeek();
+    let offset = new Date().getTimezoneOffset() * 60 * 1000;
+    for (let time = weekStartDate.getTime(); time < this.dateToday.getTime(); time = time + 86400000) {
+      dateRange.push(new Date(time - offset));
+    }
+    return dateRange;
   }
 
   getFirstDayofMonth() {
@@ -57,15 +68,6 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
 
   renderWastageTrendChart() {
     jQuery('#wastageTrendContainer').highcharts(this.getWastageChartConfig());
-  }
-
-  getCurrentWeekDateRange() {
-    let dateRange: Date[] = new Array();
-    let weekStartDate: Date = this.getFirstDayOfWeek();
-    for (let time = weekStartDate.getTime(); time < this.dateToday.getTime(); time = time + 86400000) {
-      dateRange.push(new Date(time));
-    }
-    return dateRange;
   }
 
   getDateRange() {
