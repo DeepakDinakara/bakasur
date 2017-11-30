@@ -113,7 +113,8 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
       },
       "legend": {
         "align": "center",
-        "verticalAlign": "bottom"
+        "verticalAlign": "bottom",
+        "enabled": false
       },
       "plotOptions": {
         "series": {
@@ -265,7 +266,8 @@ export class OverallDataComponent implements OnInit, AfterViewInit {
       },
       "legend": {
         "align": "center",
-        "verticalAlign": "bottom"
+        "verticalAlign": "bottom",
+        "enabled": false
       },
       "tooltip": {
         "formatter": function () {
