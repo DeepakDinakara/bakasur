@@ -35,7 +35,7 @@
             <a class="pull-left event event-info" *ngIf="daysData.isSpecial" matTooltip="Special Lunch!!" [matTooltipPosition]="'right'"></a>
           </div>
 
-          <div class="ratings" ng-if="daysData.rating" matTooltip="Your rating" [matTooltipPosition]="'below'">
+          <div class="ratings" *ngIf="daysData.rating" matTooltip="Your rating" [matTooltipPosition]="'below'">
             <mat-icon aria-label="Star Rating" *ngFor="let i of daysData.rating">star_rating</mat-icon>
           </div>
         </div>
