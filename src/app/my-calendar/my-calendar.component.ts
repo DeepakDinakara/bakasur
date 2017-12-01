@@ -17,22 +17,22 @@ export class MyCalendarComponent {
         day: 26
       }, {
         day: 27,
-        rating: [1, 2, 3],
-        backgroundImageUrl: 'http://english.mathrubhumi.com/polopoly_fs/1.1818744.1490269339!/image/image.jpg_gen/derivatives/landscape_822/image.jpg',
-        backgroundSize: '175px'
+        rating: [1, 2, 3]
       }, {
         day: 28,
-        backgroundImageUrl: "https://i1.wp.com/feastingathome.com/wp-content/uploads/2012/03/Lemon-dill-soup-9259.jpg",
+        backgroundImageUrl: "http://english.mathrubhumi.com/polopoly_fs/1.1818744.1490269339!/image/image.jpg_gen/derivatives/landscape_822/image.jpg",
         backgroundSize: '175px'
       }, {
         day: 29,
         rating: [1, 2, 3, 4],
         isWarning1: true,
-        backgroundImageUrl: 'https://www.archanaskitchen.com//images/archanaskitchen/World_Asian/Vegetable_Manchow_Soup.jpg',
+        backgroundImageUrl: 'https://cdn.awesomecuisine.com/wp-content/uploads/2008/11/masala_buttermilk.jpg',
         backgroundSize: '175px'
       }, {
         day: 30,
-        isWarning2: true
+        isWarning2: true,
+        backgroundImageUrl: 'https://www.archanaskitchen.com//images/archanaskitchen/World_Asian/Vegetable_Manchow_Soup.jpg',
+        backgroundSize: '175px'
       }, {
         day: 1,
         isCurrentMonth: true,
@@ -85,7 +85,10 @@ export class MyCalendarComponent {
         day: 14
       }, {
         isCurrentMonth: true,
-        day: 15
+        day: 15,
+        backgroundImageUrl: 'http://carnivalmunchies.com/wp-content/uploads/2015/12/butter-milk.jpg',
+        backgroundSize: '175px',
+        isSpecial: true
       }, {
         isCurrentMonth: true,
         day: 16
@@ -126,7 +129,9 @@ export class MyCalendarComponent {
       }, {
         isCurrentMonth: true,
         day: 26,
-        isSpecial: true
+        isSpecial: true,
+        backgroundImageUrl: 'https://i1.wp.com/feastingathome.com/wp-content/uploads/2012/03/Lemon-dill-soup-9259.jpg',
+        backgroundSize: '175px',
       }, {
         isCurrentMonth: true,
         day: 27

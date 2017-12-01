@@ -573,6 +573,29 @@
   }
 
   .notification-icon {
-    color: #c4a30a;
+    color: #ffd740;
     padding-bottom: 2px;
+    animation-duration: 0.8s;
+    animation-name: changewidth;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
   }
+
+  @keyframes changewidth {
+    from {
+      -webkit-transform: scale(1.15,1.15);
+      -moz-transform: scale(1.15,1.15);
+      -ms-transform: scale(1.15,1.15);
+      -o-transform: scale(1.15,1.15);
+      transform: scale(1.15,1.15);
+    }
+  
+    to {
+      -webkit-transform: scale(1.01,1.01);
+      -moz-transform: scale(1.01,1.01);
+      -ms-transform: scale(1.01,1.01);
+      -o-transform: scale(1.01,1.01);
+      transform: scale(1.01,1.01);
+    }
+  }
+ 
