@@ -21,7 +21,8 @@
   <div class="cal-month-box">
     <div class="cal-row-fluid cal-before-eventlist" *ngFor="let weekData of calendarData.weeks">
       <div class="cal-cell1 cal-cell" data-cal-row="-day1" *ngFor="let daysData of weekData.days; let dayIndex = index" [ngClass]="{'rostered': daysData.isRostered}">
-        <div class="cal-month-day" [ngClass]="{'cal-day-weekend': dayIndex === 0 || dayIndex === 6, 'cal-day-outmonth': !daysData.isCurrentMonth, 'rostered': daysData.isRostered}"
+        <div class="cal-month-day" [ngStyle]="{'background-image':'url(' + daysData.backgroundImageUrl + ')', 'background-size': daysData.backgroundSize}"
+          [ngClass]="{'cal-day-weekend': dayIndex === 0 || dayIndex === 6, 'cal-day-outmonth': !daysData.isCurrentMonth, 'rostered': daysData.isRostered, 'image-embed': daysData.backgroundImageUrl}"
           (click)="onRoster($event, daysData)">
           <span class="pull-right" [attr.data-cal-date]="daysData.day" [attr.data-cal-view]="daysData.day" data-toggle="tooltip" title=""
             data-original-title="">{{daysData.day}}</span>
@@ -32,7 +33,8 @@
             <a class="pull-left event event-warning" *ngIf="daysData.isWarning2" matTooltip="You dint show up! Help reducing wastage and save your money!"
               [matTooltipPosition]="'right'"></a>
 
-            <a class="pull-left event event-info" *ngIf="daysData.isSpecial" matTooltip="Special Lunch!!" [matTooltipPosition]="'right'"></a>
+            <mat-icon class="pull-left notification-icon" *ngIf="daysData.isSpecial" matTooltip="Special Lunch!!" [matTooltipPosition]="'right'">notifications_active</mat-icon>
+
           </div>
 
           <div class="ratings" *ngIf="daysData.rating" matTooltip="Your rating" [matTooltipPosition]="'below'">

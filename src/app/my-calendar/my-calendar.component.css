@@ -474,6 +474,11 @@
     background: #0fa70f33;
 }
 
+.cal-month-day.image-embed span {
+  color: #337ab7 !important;
+  opacity: 0.8 !important;
+}
+
 .cal-month-day.rostered span {
     color: #22922b
 }
@@ -562,7 +567,12 @@
 
   .ratings mat-icon {
     font-size: 15px;
-    color: #e2bb09;
+    color: #c4a30a;
     width: 12px;
     pointer-events: all; 
+  }
+
+  .notification-icon {
+    color: #c4a30a;
+    padding-bottom: 2px;
   }

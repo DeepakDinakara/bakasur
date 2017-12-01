@@ -17,13 +17,19 @@ export class MyCalendarComponent {
         day: 26
       }, {
         day: 27,
-        rating: [1, 2, 3]
+        rating: [1, 2, 3],
+        backgroundImageUrl: 'http://english.mathrubhumi.com/polopoly_fs/1.1818744.1490269339!/image/image.jpg_gen/derivatives/landscape_822/image.jpg',
+        backgroundSize: '175px'
       }, {
-        day: 28
+        day: 28,
+        backgroundImageUrl: "https://i1.wp.com/feastingathome.com/wp-content/uploads/2012/03/Lemon-dill-soup-9259.jpg",
+        backgroundSize: '175px'
       }, {
         day: 29,
         rating: [1, 2, 3, 4],
-        isWarning1: true
+        isWarning1: true,
+        backgroundImageUrl: 'https://www.archanaskitchen.com//images/archanaskitchen/World_Asian/Vegetable_Manchow_Soup.jpg',
+        backgroundSize: '175px'
       }, {
         day: 30,
         isWarning2: true
@@ -114,6 +120,9 @@ export class MyCalendarComponent {
       }, {
         day: 25,
         isCurrentMonth: true,
+        isCelebration: true,
+        backgroundImageUrl: 'https://c.tadst.com/gfx/750w/christmas.jpg?1',
+        backgroundSize: '175px'
       }, {
         isCurrentMonth: true,
         day: 26,
