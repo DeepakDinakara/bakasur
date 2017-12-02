@@ -10,11 +10,11 @@
 
 ### Calendar Component
 
-![Calendar Component](src/assets/screenshots/screen3-calendar.png?raw=true "Calendar Component")
+![Calendar Component](src/assets/screenshots/screen2-calendar.png?raw=true "Calendar Component")
 
 
 
 
 ### Dashboard
 
-![Dashboard](src/assets/screenshots/screen5-dashboard.png?raw=true "Dashboard")
+![Dashboard](src/assets/screenshots/screen3-dashboard.png?raw=true "Dashboard")
