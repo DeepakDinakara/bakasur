@@ -1,3 +1,3 @@
-# Bakasur TechJam App
+# Bakasur Food Menu Selection App
 
-![Menu Screenshot](assets/screenshots/screen1-menu.png?raw=true "Menu Carousel")
+![Menu Screenshot](src/assets/screenshots/screen1-menu.png?raw=true "Menu Carousel")
